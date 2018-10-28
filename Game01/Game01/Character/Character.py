@@ -22,7 +22,7 @@ class Character(object):
     '''
     #TODO: db table for a character
 
-    def __init__(self, chname, race, chhealth, chenergy):
+    def __init__(self, chname, chrace, chhealth, chenergy):
         '''
         Constructor
         
@@ -30,8 +30,9 @@ class Character(object):
         # TODO: load character from database
         # TODO: tvaluedisplay - to display character params when testing /debug ON
         self.chname=chname
+        self.race=chrace
         self.chhealth=chhealth
-        
+        self.chenergy=chenergy
 
     def battleshout(self):
         '''
