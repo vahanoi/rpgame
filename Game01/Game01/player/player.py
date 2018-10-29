@@ -18,6 +18,6 @@ class Player:
  
     #TODO: test TODO
         age=0
-        return("shout!!!")
+        return(None)
     
     

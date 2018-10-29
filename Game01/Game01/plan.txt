@@ -1,0 +1,10 @@
+1. Overview
+Simple RPG game on a hexagon map. 
+
+2. Classes
+	2.a. Character
+		Methods
+		Variables
+	2.b. Map
+	2.c. Location
+	2.d. NPC
