@@ -8,12 +8,10 @@ Kind of game rollplay
 
 import sqlite3
 
-from player.player import Player
 from Character.Character import *
 
 
 def main():
-    p = Player('','')
     ch = Character("","","")
     print(f'Hi this is a game')
     # create sqlite database
