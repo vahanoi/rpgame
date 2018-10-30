@@ -22,7 +22,11 @@ class Character(object):
     '''
     #TODO: db table for a character
 
-    def __init__(self, chname, chrace, chhealth, chenergy=100):
+    def __init__(self, 
+            chname, 
+            chrace, 
+            chhealth, 
+            chenergy=100):
         '''
         Constructor
         

@@ -6,5 +6,6 @@ Simple RPG game on a hexagon map.
 		Methods
 		Variables
 	2.b. Map
-	2.c. Location
-	2.d. NPC
+	2.c. Location/hex
+	2.d. Location
+	2.e. NPC
