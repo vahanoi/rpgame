@@ -1,6 +1,11 @@
 1. Overview
 Simple RPG game on a hexagon map. 
 
+working stages
+1. Loading - check DB if exist, 
+	load settings - if exists
+	ask for user/character details - login or create new in db
+2. 	
 2. Classes
 	2.a. Character
 		Methods
