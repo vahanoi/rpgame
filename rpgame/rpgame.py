@@ -15,6 +15,7 @@ from character.character import *
 def splashscreen():
     '''
     Display initial splash screen for the game
+    Multi-line
     
     '''
     print(f'''
