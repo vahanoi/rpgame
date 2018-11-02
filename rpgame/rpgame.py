@@ -27,6 +27,9 @@ def main():
     '''
     Create sqlite database
     TODO: DB as a object so starting and initial checks in a separate module
+    TODO: indexing
+    CREATE UNIQUE INDEX `` ON `character` (
+    `id` );
     '''
     db = sqlite3.connect('game.db')
     c = db.cursor()
