@@ -12,6 +12,13 @@ import sys
 
 from character.character import *
 
+class cls(object):
+    def __repr__(self):
+        import os
+
+        os.system('cls' if os.name == 'nt' else 'clear')
+        return ''
+cls = cls()
 def splashscreen():
     '''
     Display initial splash screen for the game
@@ -36,6 +43,9 @@ def main():
     c = db.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS character
                     (id,name,race,experience)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS race 
+                    (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom)''')
+    c.execute('''''')
     '''
     TODO: Create Race table with race parameters (max 3)
     id, 
@@ -55,6 +65,9 @@ def main():
         if key == 'N' or key == 'n': # N to exit
             db.close() # Closing database
             print('\n\nClosing awesome world!!!!!\n\n')
+            #curses.nocbreak()
+            #curses.echo()
+            cls
             sys.exit(0)
         elif key=='Y' or key=='y':
             print('Loading the RPGame......\n\n')
@@ -69,12 +82,13 @@ def main():
             if debug==True:
                 print(result)
             if result==None:
-                sracename=input(f"chose a race[Human/Drakl/Blump] ")
-                print(f'Chosen name> {sracename}')
+                print("\nNow time has come to chose your tribe")
+                racename=input(f"chose a race[Human/Drakl/Blump] ")
+                print(f'Chosen name> {racename}')
             else:
                 input('Character exists. Load Character?')
         else: print('\n\nHave you read info yet???')
-    ch = Character(chname,sracename,"")
+    ch = Character(chname,racename,"")
     
 if __name__ == '__main__':
     main()
