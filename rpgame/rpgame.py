@@ -33,7 +33,7 @@ Please chose your Name and Race below \n\n
 def main():
     '''
     Create sqlite database
-    TODO: make DB separate module??
+    TODO: create separate module database tohandle most of database requests
     TODO: DB as a object so starting and initial checks in a separate module
     TODO: indexing
     CREATE UNIQUE INDEX `` ON `character` (
@@ -45,6 +45,14 @@ def main():
                     (id,name,race,experience)''')
     c.execute('''CREATE TABLE IF NOT EXISTS race 
                     (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom)''')
+    '''
+    insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
+            values ('1','Human','75','50','55','55','65','60'); 
+    insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
+            values ('2','Drakl','85','45','55','75','55','45'); 
+    insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
+            values ('3','Blump','55','55','70','55','60','70');
+    '''
     c.execute('''''')
     '''
     TODO: Create Race table with race parameters (max 3)
