@@ -9,6 +9,7 @@ RPG game created as a python learning exercise.
 
 import sqlite3 
 import sys
+from database.database import *
 
 from character.character import *
 
@@ -39,12 +40,13 @@ def main():
     CREATE UNIQUE INDEX `` ON `character` (
     `id` );
     '''
-    db = sqlite3.connect('game.db')
+    db = database.create('','game.db')
+    #####db = sqlite3.connect('game.db')
     c = db.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS character
-                    (id,name,race,experience)''')
-    c.execute('''CREATE TABLE IF NOT EXISTS race 
-                    (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom)''')
+    # c.execute('''CREATE TABLE IF NOT EXISTS character
+    #                (id,name,race,experience)''')
+    # c.execute('''CREATE TABLE IF NOT EXISTS race 
+    #                (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom)''')
     '''
     insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
             values ('1','Human','75','50','55','55','65','60'); 
@@ -71,7 +73,8 @@ def main():
         Exit game procedure - db closing
         '''
         if key == 'N' or key == 'n': # N to exit
-            db.close() # Closing database
+            database.close('',db)
+            #db.close() # Closing database
             print('\n\nClosing awesome world!!!!!\n\n')
             #curses.nocbreak()
             #curses.echo()
