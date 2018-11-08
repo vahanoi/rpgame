@@ -14,9 +14,6 @@ class Player:
         '''
         Constructor
         '''
-        
- 
-    #TODO: test TODO
         age=0
         return(None)
     

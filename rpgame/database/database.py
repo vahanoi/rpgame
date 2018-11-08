@@ -9,8 +9,8 @@ from sys import exit
 
 
 class database:
-    '''
-    Check if DB exists if not, create and init game database, insert default data
+    '''Check if DB exists if not, create and init game database, insert default data.
+    
     '''
     
     def __init__(self):

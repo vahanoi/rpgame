@@ -7,7 +7,6 @@ RPG game created as a python learning exercise.
 
 """
 
-import sqlite3 
 import sys
 from database.database import *
 
@@ -55,15 +54,7 @@ def main():
     #                (id,name,race,experience)''')
     # c.execute('''CREATE TABLE IF NOT EXISTS race 
     #                (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom)''')
-    '''
-    insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
-            values ('1','Human','75','50','55','55','65','60'); 
-    insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
-            values ('2','Drakl','85','45','55','75','55','45'); 
-    insert into race (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
-            values ('3','Blump','55','55','70','55','60','70');
-    '''
-    # c.execute('''''')
+    
     '''
     TODO: Create Race table with race parameters (max 3)
     id, 
