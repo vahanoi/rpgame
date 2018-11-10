@@ -41,7 +41,7 @@ class database:
                (id,rname,rstrenght,rluck,rdexterity,rstamina,rsocial,rwisdom) 
                values ('3','Blump','55','55','70','55','60','70');''')
         
-    def create (self, dbname):
+    def create (self, dbname, debug):
         ''' check if game database exist
             if not - create and insert data
             if yes - check if records exists
@@ -49,8 +49,9 @@ class database:
                 if yes - skip and go
         
         '''
-        if os.path.isfile(dbname):  # TODO: check this not sure if will work
-            print(os.path.isfile(dbname))
+        if os.path.isfile(dbname): # If DB file exists
+            if debug==True:
+                print(os.path.isfile(dbname))
             db = sqlite3.connect(dbname)
             c = db.cursor()
             # TODO: check if tables exists before creating

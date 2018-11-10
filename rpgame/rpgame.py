@@ -47,7 +47,8 @@ def main():
     CREATE UNIQUE INDEX `` ON `character` (
     `id` );
     '''
-    db = database.create(database, 'game.db')
+    debug = True # TODO: Pass debug to objects to print debug info
+    db = database.create(database, 'game.db',debug)
     #####db = sqlite3.connect('game.db')
     c = db.cursor()
     # c.execute('''CREATE TABLE IF NOT EXISTS character
@@ -62,7 +63,7 @@ def main():
     race modifiers - strength, luck, dexterity, Stamina, Social, wisdom
     
     '''
-    debug = True
+
 # main loop
     while True:
         # General info about a game - text
