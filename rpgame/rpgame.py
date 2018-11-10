@@ -9,9 +9,9 @@ RPG game created as a python learning exercise.
 
 import sys
 from database.database import *
-
 from character.character import *
 from string import ascii_lowercase
+from msvcrt import getch
 
 
 class cls(object):
@@ -25,19 +25,37 @@ class cls(object):
 
 cls = cls()
 
-
+def cleanscreen(r=24):
+    for n in range (r):
+        print('\n')
+def displaymenu():
+    ''' Game menu
+    '''
+    choice =''
+    cleanscreen() # print 25 empty lines
+    print('   Game menu:\n\n')
+    print('    [N]ew Game\n')
+    print('    [L]oad game\n')
+    print('    [Q]uit\n\n\n\n\n\n')
+    print('Enter your choice <N/L/Q> and press <Enter>:')
+    choice = getch()
+    return (choice)
+    
 def splashscreen():
     '''
     Display initial splash screen for the game
     Multi-line
     
     '''
-    print(f'''
-Hi this is a RPGame - test game written in Python \n
-Please chose your Name and Race below \n\n
-        ''')   
-
-
+    cleanscreen()
+    print(f'''\n\n\n
+        Hi this is a RPGame - test game written in Python \n\n
+        Please chose your Name and Race below \n\n
+        press any key to continue\n\n\n\n\n\n\n\n\n
+        ''')
+    getch()
+    
+    
 def main():
     '''
     Create sqlite database
@@ -67,12 +85,13 @@ def main():
 # main loop
     while True:
         # General info about a game - text
-        splashscreen() 
-        key = input('Do you need me to start the Game [Y/N]')
+        splashscreen()
+        print("menu: %1c" % displaymenu().decode("ascii"))
+        key = input('Do you need me to start the Game [Y/N]') # TODO: I should add startup menu instead
         '''
         Exit game procedure - db closing
         '''
-        if key == 'N' or key == 'n':  # N to exit
+        if key == 'N' or key == 'n':  # N to exit not sure if necessary 
             database.close(database, db)
             # db.close() # Closing database
             print('\n\nClosing awesome world!!!!!\n\n')
@@ -106,6 +125,7 @@ def main():
                 input('Character exists. Load Character?')
         else: print('\n\nHave you read info yet???')
     ch = Character(chname, racename, "")
+    ch.create(ch)
 
     
 if __name__ == '__main__':

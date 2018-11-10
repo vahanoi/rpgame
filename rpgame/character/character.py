@@ -44,6 +44,10 @@ class Character(object):
         '''
         None
     
+    def create(self):
+        '''Create a new character 
+        '''
+    
     kind=''
     
     
