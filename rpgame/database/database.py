@@ -58,7 +58,7 @@ class database:
             # Create tables
             c.execute('''SELECT COUNT(name) FROM sqlite_master WHERE type=\'table\'''')
             if c.fetchone() == 0:
-                self.createtables(self, c)
+                self.createtables(c)
                 self.insertdata(self, c)
                 db.commit()
             else:
